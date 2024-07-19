@@ -10,6 +10,7 @@ body {
   left: 0;
   right: 0;
 }
+
 #mazeContainer {
   transition-property: opacity;
   transition-duration: 1s;
@@ -25,6 +26,7 @@ body {
   display: block;
   border: solid 1px black;
 }
+
 input,
 select {
   transition-property: background-color opacity;
@@ -42,7 +44,9 @@ select {
   font-size: 15px;
   text-align: center;
   text-decoration: none;
-  appearance: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
 }
 input:hover,
 select:hover {
@@ -56,6 +60,7 @@ input:focus,
 select:focus {
   outline: none;
 }
+
 .custom-select {
   display: inline-block;
 }
@@ -63,10 +68,11 @@ select:focus {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  background-image: url("data:image/png; base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAh0lEQVQ4T93TMQrCUAzG8V9x8QziiYSuXdzFC7h4AcELOPQAdXYovZCHEATlgQV5GFTe1ozJlz/kS1IpjKqw3wQBVyy++JI0y1GTe7DCBbMAckeNIQKk/BanALBB+16LtnDELoMcsM/BESDlz2heDR3WePwKSLo5eoxz3z6NNcFD+vu3ij14Aqz/DxGbKB7CAAAAAElFTkSuQmCC");
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAh0lEQVQ4T93TMQrCUAzG8V9x8QziiYSuXdzFC7h4AcELOPQAdXYovZCHEATlgQV5GFTe1ozJlz/kS1IpjKqw3wQBVyy++JI0y1GTe7DCBbMAckeNIQKk/BanALBB+16LtnDELoMcsM/BESDlz2heDR3WePwKSLo5eoxz3z6NNcFD+vu3ij14Aqz/DxGbKB7CAAAAAElFTkSuQmCC");
   background-repeat: no-repeat;
   background-position: 125px center;
 }
+
 #Message-Container {
   visibility: hidden;
   color: white;
@@ -90,6 +96,7 @@ select:focus {
   margin-left: -150px;
   margin-top: -150px;
 }
+
 #page {
   font-family: "Segoe UI", Arial, sans-serif;
   text-align: center;
@@ -118,10 +125,12 @@ select:focus {
   width: 100%;
   height: auto;
 }
+
 .border {
   border: 1px black solid;
   border-radius: 5px;
 }
+
 #gradient {
   z-index: -1;
   position: fixed;
@@ -130,10 +139,24 @@ select:focus {
   width: 100vw;
   height: 100vh;
   color: #fff;
-  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
   background-size: 400% 400%;
-  animation: Gradient 15s ease infinite;
+  -webkit-animation: Gradient 15s ease infinite;
+          animation: Gradient 15s ease infinite;
 }
+
+@-webkit-keyframes Gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 @keyframes Gradient {
   0% {
     background-position: 0% 50%;
@@ -147,8 +170,7 @@ select:focus {
 }
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 400px) {
-  input,
-  select {
+  input, select {
     width: 120px;
   }
 }
